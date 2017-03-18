@@ -16,6 +16,8 @@ public class TuringState {
 	public TuringState(boolean isAcceptanceState, boolean isGarbageState){
 		this.isAcceptanceState = isAcceptanceState;
 		this.isGarbageState = isGarbageState;
+		this.adjacency = new HashMap<>();
+		this.action = new HashMap<> ();
 	}
 	
 	public TuringState getAdjacency(String currentSymbol){
