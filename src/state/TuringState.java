@@ -21,7 +21,10 @@ public class TuringState {
 	}
 	
 	public TuringState getAdjacency(String currentSymbol){
-		return this.adjacency.get(currentSymbol);
+		if(this.action.containsKey(currentSymbol))
+			return this.adjacency.get(currentSymbol);
+		else
+			return this.adjacency.get("*");
 	}
 
 	/**
@@ -49,4 +52,11 @@ public class TuringState {
 		}
 	}
 	
+	public boolean isAcceptanceState(){
+		return this.isAcceptanceState;
+	}
+	
+	public boolean isGarbageState(){
+		return this.isGarbageState;
+	}
 }
