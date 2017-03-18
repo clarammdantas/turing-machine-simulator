@@ -64,6 +64,18 @@ public class TuringMachineTest {
 		machine.run();
 		assertEquals("[_, _, _, _, _, _, _, _, _]", machine.getTape().toString());
 		assertTrue(machine.getCurrentState().isAcceptanceState());
+		
+		initialInput = new ArrayList<>();
+		initialInput.add("_");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("0");
+		initialInput.add("_");
+		
+		machine = new TuringMachine(initialInput, 1, q0);
+		machine.run();
+		assertTrue(machine.getCurrentState().isGarbageState());
+		
 		//System.out.println(machine.getTape().toString());
 		//System.out.println(machine.getCurrentState().isAcceptanceState());
 	}
