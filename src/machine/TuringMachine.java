@@ -24,7 +24,9 @@ public class TuringMachine {
 		String direction = action[0];
 		String newSymbol = action[1];
 		
-		tape.set(headPosition, newSymbol);
+		if (! newSymbol.equals("*")) // * signfica nao mudar a fita
+			tape.set(headPosition, newSymbol);
+		
 		if (direction.equals("r")){
 			headPosition++;
 		}else if (direction.equals("l")){
