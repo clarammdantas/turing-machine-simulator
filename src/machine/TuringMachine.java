@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import state.TuringState;
 
+
 public class TuringMachine {
 	private TuringState currentState;
 	private ArrayList<String> tape;
@@ -15,6 +16,7 @@ public class TuringMachine {
 		this.headPosition = initialPosition;
 		this.currentState = initialState;
 	}
+	
 	
 	public void nextStep(){
 		
