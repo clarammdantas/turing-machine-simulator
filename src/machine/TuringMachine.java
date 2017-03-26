@@ -1,9 +1,6 @@
 package machine;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import state.TuringState;
 
 
 public class TuringMachine {
@@ -53,5 +50,9 @@ public class TuringMachine {
 	
 	public TuringState getCurrentState(){
 		return this.currentState;
+	}
+	
+	public void setInitialInput(ArrayList<String> initialInput) {
+		this.tape = initialInput;
 	}
 }

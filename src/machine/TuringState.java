@@ -1,4 +1,4 @@
-package state;
+package machine;
  
 import java.util.HashMap;
  
@@ -8,6 +8,7 @@ import java.util.HashMap;
  *
  */
 public class TuringState {
+	
 	private boolean isAcceptanceState;
 	private boolean isGarbageState;
 	private HashMap<String, TuringState> adjacency;
