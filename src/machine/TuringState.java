@@ -25,7 +25,7 @@ public class TuringState {
 		if(this.action.containsKey(currentSymbol))
 			return this.adjacency.get(currentSymbol);
 		else
-			return this.adjacency.get("*");
+			return this.adjacency.get("*"); 	
 	}
 
 	/**

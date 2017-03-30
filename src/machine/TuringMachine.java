@@ -6,12 +6,19 @@ import java.util.ArrayList;
 public class TuringMachine {
 	private TuringState currentState;
 	private ArrayList<String> tape;
+	private ArrayList<String> initialInput;
 	private int headPosition;
+	private int initialPosition;
+	private TuringState initialState;
 	
 	public TuringMachine(ArrayList<String> initialInput, int initialPosition, TuringState initialState){
 		this.tape = initialInput;
 		this.headPosition = initialPosition;
 		this.currentState = initialState;
+		this.initialPosition = initialPosition;
+		this.initialState = initialState;
+		this.initialInput = initialInput;
+		
 	}
 	
 	
@@ -38,6 +45,12 @@ public class TuringMachine {
 		while (!currentState.isAcceptanceState() && !currentState.isGarbageState()){
 			this.nextStep();
 		}
+	}
+	
+	public void reset(){
+		this.tape = initialInput;
+		this.headPosition = initialPosition;
+		this.currentState = initialState;
 	}
 	
 	public ArrayList<String> getTape(){
