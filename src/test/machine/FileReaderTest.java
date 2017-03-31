@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,8 @@ public class FileReaderTest {
 		initialInput.add("0");
 		initialInput.add("0");
 		initialInput.add("1");
-		initialInput.add("_");
+		initialInput.add("_"); 
+		
 
 	}
 
@@ -40,8 +42,9 @@ public class FileReaderTest {
 		machine.setInitialInput(initialInput);
 		
 		machine.run();
-		assertEquals("[_, _, _, _, _, _, _, _, _]", machine.getTape().toString());
-		assertTrue(machine.getCurrentState().isAcceptanceState());
+		assertEquals("[_, _, _, _, _, _, _, _, _]", machine.getTape().toString()); // 1100001
+		assertTrue(machine.getCurrentState().isAcceptanceState()); 
+	
 
 	}
 	
@@ -54,5 +57,51 @@ public class FileReaderTest {
 		machine.run();
 		assertEquals("[_, 1, 0, 0, 1, _, 0, 1, _]", machine.getTape().toString());
 		assertFalse(machine.getCurrentState().isAcceptanceState());
+	} 
+	
+	@Test
+	public void testTreta() throws Exception{
+		fr = new FileReaderTXT("machine2.txt");
+		initialInput = new ArrayList<>();
+		//10110
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("1");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("_"); 
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		initialInput.add("_");
+		
+		TuringMachine machine = fr.getMachine(6);
+		machine.setInitialInput(initialInput);
+		machine.run();
+		System.out.println(machine.getTape());
+		
+		/*initialInput.add("_");
+		initialInput.add("1");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("1");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("_");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("1");
+		initialInput.add("0");
+		initialInput.add("1");
+		initialInput.add("1");
+		initialInput.add("_"); */
 	}
+
 }

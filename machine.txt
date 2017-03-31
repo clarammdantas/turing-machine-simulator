@@ -37,5 +37,3 @@ accept2 * ) * halt-accept
 reject _ : r reject2
 reject * _ l reject
 reject2 * ( * halt-reject
-
-
