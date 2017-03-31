@@ -11,7 +11,7 @@ import machine.*;
 public class TuringMachineTest {
 
 	@Test
-	public void test() {
+	public void test() throws Exception {
 		TuringState q0 = new TuringState(false, false);
 		TuringState qo = new TuringState(false, false);
 		TuringState qi = new TuringState(false, false);

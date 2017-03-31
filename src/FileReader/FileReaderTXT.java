@@ -102,14 +102,29 @@ public class FileReaderTXT {
 	}
 
 	/**
-	 * return a machine from file readed. 
+	 * return a machine from file readed and starting from position 1. 
 	 * OBS: this file doesn't have tape(initialInput), you should set.
 	 * @return
+	 * @throws Exception 
 	 */
-	public TuringMachine getMachine() {
+	public TuringMachine getMachine() throws Exception {
+		readState();
+		readAdjacency();
 		return new TuringMachine(null, 1, machine.get("0"));
 	}
 	
+	
+	/**
+	 * return a machine from file readed and starting from position starter
+	 * @param starter
+	 * @return
+	 * @throws Exception
+	 */
+	public TuringMachine getMachine(int starter) throws Exception {
+		readState();
+		readAdjacency();
+		return new TuringMachine(null, starter, machine.get("0"));
+	}
 
 	/**
 	 *  this method verify if machine map variable was initialized. 

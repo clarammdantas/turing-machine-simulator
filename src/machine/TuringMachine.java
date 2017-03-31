@@ -22,7 +22,7 @@ public class TuringMachine {
 	}
 	
 	
-	public void nextStep(){
+	public void nextStep() throws Exception{
 		
 		TuringState nextState = currentState.getAdjacency(tape.get(headPosition));
 		String[] action = currentState.getAction(tape.get(headPosition)).split(" ");
@@ -41,7 +41,7 @@ public class TuringMachine {
 		this.currentState = nextState;
 	}
 	
-	public void run(){
+	public void run() throws Exception{
 		while (!currentState.isAcceptanceState() && !currentState.isGarbageState()){
 			this.nextStep();
 		}

@@ -21,11 +21,13 @@ public class TuringState {
 		this.action = new HashMap<> ();
 	}
 	
-	public TuringState getAdjacency(String currentSymbol){
+	public TuringState getAdjacency(String currentSymbol) throws Exception{
 		if(this.action.containsKey(currentSymbol))
 			return this.adjacency.get(currentSymbol);
+		else if(this.action.containsKey("*"))
+			return this.adjacency.get("*"); 
 		else
-			return this.adjacency.get("*"); 	
+			throw new Exception("Transição não existe");
 	}
 
 	/**
