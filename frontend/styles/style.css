@@ -37,6 +37,14 @@ html, body {
 	margin-top: 10px;
 }
 
+.navbarRight {
+	display: inline-block;
+	float: right;
+	margin-left: 10px;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
 #navbarImg {
 	height: 100px;
 	width: 100px;
@@ -55,4 +63,95 @@ div div a {
 	font-family: Corben, Georgia, Times, sans-serif;
 	font-size: 24px;
 
+}
+
+#mainBox {
+	border: 3px solid #d1d1d1;
+	border-radius: 2px;
+	background-color: #e0e0e0;
+	padding-top: 10px;
+ 	padding-bottom: 10px;
+  	padding-left: 10px;
+  	padding-right: 10px;
+  	margin-left: 37px;
+  	margin-right: 40px;
+  	margin-top: 90px;
+  	margin-bottom: 10px;
+  	text-align: center;
+  	display: inline-block;
+  	height: 800px;
+  	width: 92%;
+}
+
+#machineTape {
+	border: 2px solid #f7f7f7;
+	border-radius: 5px;
+	height: 80px;
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 0;
+	background-color: #f7f7f7;
+}
+
+#bodyTitlesFont {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 19px;
+}
+
+.bodyTitles {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 8%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+.underTapeDiv {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 17px;	
+}
+
+.currentState {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 10%;
+	height: 40px;
+	margin-left: 29px;
+	margin-top: 8px;
+	display: inline-block;
+	float: left;
+}
+
+#steps {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 10%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 8px;
+	display: inline-block;
+	float: left;
+}
+
+#source {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	display: inline;
+	width: 800px;
+	height: 400px;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 17px;
+	line-height: 17px;
+}
+
+.sourceDiv {
+	margin-top: 100px;
+	margin-left: -320px;
 }

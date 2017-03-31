@@ -23,16 +23,33 @@
 				<a href="">Instruções</a>
 			</div>
 
-			<div class="navbarTextRight">
-				<a href="">English</a>
-			</div>
-
-			<div class="navbarTextRight">
+			<div class="navbarRight">
 				<a href="">Info</a>
 			</div>
 
 			<div class="navbarTextRight">
 				<a href="">Equipe</a>
+			</div>
+		</div>
+
+		<div id="mainBox">
+			<div class="bodyTitles">
+				<div id="bodyTitlesFont">Fita</div>
+			</div>
+
+			<div id="machineTape"></div>
+
+			<div class="currentState">
+				<div class="underTapeDiv">Estado Atual</div>
+			</div>
+
+			<div id="steps">
+				<div class="underTapeDiv">Passos</div>
+			</div>
+
+			<div class="sourceDiv">
+				<textarea id ="source" wrap="off" oninput="TextAreaChanged()"
+					onscroll="UpdateTextAreaScroll()" onblur="Compile()"></textarea>
 			</div>
 		</div>
 	</body>
