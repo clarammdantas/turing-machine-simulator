@@ -48,7 +48,19 @@ public class Controller {
 		return machine.getTape().toString();
 	}
 	
-	public void setMachineInitialInput(LinkedList<String> initialInput) {
-		machine.setInitialInput(initialInput);
+	public LinkedList<String> createFinalInput(String input){
+		LinkedList<String> finalInput = new LinkedList<>();
+		for (int i = 0; i < input.length(); i++){
+			if (!input.substring(i, i + 1).equals(" "))
+				finalInput.add(input.substring(i, i + 1));
+			else
+				finalInput.add("_");
+		}
+		return finalInput;
+	}
+	
+	public void setMachineInitialInput(String initialInput) {
+		LinkedList<String> finalInitialInput = createFinalInput(initialInput);
+		machine.setInitialInput(finalInitialInput);
 	}
 }
