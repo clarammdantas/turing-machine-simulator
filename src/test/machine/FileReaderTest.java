@@ -72,4 +72,26 @@ public class FileReaderTest {
 		//System.out.println(machine.getTape());
 	}
 
+	@Test
+	public void testBinaryAddition() throws Exception{
+		fr = new FileReaderTXT("machine3.txt");
+		String input = "110110_101011";
+		createInput(input);
+		
+		TuringMachine machine = fr.getMachine(0);
+		machine.setInitialInput(initialInput);
+		machine.run();
+		assertEquals("[_, 1, 1, 0, 0, 0, 0, 1, _, _, _, _, _, _, _, _]", machine.getTape().toString());
+	}
+	
+	public void testParenthesesChecker() throws Exception {
+		fr = new FileReaderTXT("machine4.txt");
+		String input = "12(2+(3^(4-1)))";
+		createInput(input);
+		
+		TuringMachine machine = fr.getMachine(0);
+		machine.setInitialInput(initialInput);
+		machine.run();
+		assertTrue(machine.getCurrentState().isAcceptanceState());
+	}
 }
