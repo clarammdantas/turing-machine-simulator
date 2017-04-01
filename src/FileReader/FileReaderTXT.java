@@ -107,7 +107,7 @@ public class FileReaderTXT {
 	public TuringMachine getMachine() throws Exception {
 		readState();
 		readAdjacency();
-		return new TuringMachine(null, 1, machine.get("0"));
+		return new TuringMachine(null, 0, machine.get("0"));
 	}
 	
 	

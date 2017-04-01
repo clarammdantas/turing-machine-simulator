@@ -1,17 +1,18 @@
 package machine;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 
 public class TuringMachine {
 	private TuringState currentState;
-	private ArrayList<String> tape;
-	private ArrayList<String> initialInput;
+	private LinkedList<String> tape;
+	private LinkedList<String> initialInput;
 	private int headPosition;
 	private int initialPosition;
 	private TuringState initialState;
 	
-	public TuringMachine(ArrayList<String> initialInput, int initialPosition, TuringState initialState){
+	public TuringMachine(LinkedList<String> initialInput, int initialPosition, TuringState initialState){
 		this.tape = initialInput;
 		this.headPosition = initialPosition;
 		this.currentState = initialState;
@@ -34,8 +35,15 @@ public class TuringMachine {
 		
 		if (direction.equals("r")){
 			headPosition++;
+			if (headPosition >= tape.size()){
+				this.tape.add("_");
+			}
 		}else if (direction.equals("l")){
 			headPosition--;
+			if (headPosition == -1){
+				this.tape.addFirst("_");
+				headPosition = 0;
+			}
 		}
 		
 		this.currentState = nextState;
@@ -53,7 +61,7 @@ public class TuringMachine {
 		this.currentState = initialState;
 	}
 	
-	public ArrayList<String> getTape(){
+	public LinkedList<String> getTape(){
 		return this.tape;
 	}
 	
@@ -65,7 +73,7 @@ public class TuringMachine {
 		return this.currentState;
 	}
 	
-	public void setInitialInput(ArrayList<String> initialInput) {
+	public void setInitialInput(LinkedList<String> initialInput) {
 		this.tape = initialInput;
 	}
 }

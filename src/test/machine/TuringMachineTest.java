@@ -3,6 +3,7 @@ package test.machine;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import org.junit.Test;
 
@@ -47,8 +48,7 @@ public class TuringMachineTest {
 		q4.addAdjacency("_", "_", "r", q0);
 		
 		// input = "1001001";
-		ArrayList<String> initialInput = new ArrayList<>();
-		initialInput.add("_");
+		LinkedList<String> initialInput = new LinkedList<>();
 		initialInput.add("1");
 		initialInput.add("0");
 		initialInput.add("0");
@@ -56,21 +56,21 @@ public class TuringMachineTest {
 		initialInput.add("0");
 		initialInput.add("0");
 		initialInput.add("1");
-		initialInput.add("_");
+		
 
-		TuringMachine machine = new TuringMachine(initialInput, 1, q0);
+		TuringMachine machine = new TuringMachine(initialInput, 0, q0);
 		machine.run();
-		assertEquals("[_, _, _, _, _, _, _, _, _]", machine.getTape().toString());
+		assertEquals("[_, _, _, _, _, _, _, _]", machine.getTape().toString());
 		assertTrue(machine.getCurrentState().isAcceptanceState());
 		
-		initialInput = new ArrayList<>();
-		initialInput.add("_");
+		initialInput = new LinkedList<>();
+		
 		initialInput.add("1");
 		initialInput.add("0");
 		initialInput.add("0");
-		initialInput.add("_");
 		
-		machine = new TuringMachine(initialInput, 1, q0);
+		
+		machine = new TuringMachine(initialInput, 0, q0);
 		machine.run();
 		assertTrue(machine.getCurrentState().isGarbageState());
 		

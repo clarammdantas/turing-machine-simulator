@@ -1,6 +1,7 @@
 package Controller;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import FileReader.FileReaderTXT;
 import machine.TuringMachine;
@@ -47,7 +48,7 @@ public class Controller {
 		return machine.getTape().toString();
 	}
 	
-	public void setMachineInitialInput(ArrayList<String> initialInput) {
+	public void setMachineInitialInput(LinkedList<String> initialInput) {
 		machine.setInitialInput(initialInput);
 	}
 }

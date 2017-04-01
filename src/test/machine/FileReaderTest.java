@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,25 +16,24 @@ import machine.TuringMachine;
 
 public class FileReaderTest {
 
-	ArrayList<String> initialInput;
+	LinkedList<String> initialInput;
 	FileReaderTXT fr;
 	
 	@Before
 	public void setUp() throws Exception {
 		fr = new FileReaderTXT("machine.txt");
-
-		initialInput = new ArrayList<>();
-		initialInput.add("_");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("0");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("0");
-		initialInput.add("1");
-		initialInput.add("_"); 
+		String input = "1001001";
+		createInput(input);
 		
 
+	}
+	
+	public void createInput(String input){
+		initialInput = new LinkedList<>();
+		for (int i = 0; i < input.length(); i++){
+			initialInput.add(input.substring(i, i + 1));
+		}
+		
 	}
 
 	@Test
@@ -42,7 +42,7 @@ public class FileReaderTest {
 		machine.setInitialInput(initialInput);
 		
 		machine.run();
-		assertEquals("[_, _, _, _, _, _, _, _, _]", machine.getTape().toString()); // 1100001
+		assertEquals("[_, _, _, _, _, _, _, _]", machine.getTape().toString()); // 1100001
 		assertTrue(machine.getCurrentState().isAcceptanceState()); 
 	
 
@@ -55,53 +55,21 @@ public class FileReaderTest {
 
 		machine.setInitialInput(initialInput);
 		machine.run();
-		assertEquals("[_, 1, 0, 0, 1, _, 0, 1, _]", machine.getTape().toString());
+		assertEquals("[1, 0, 0, 1, 0, _, 1, _]", machine.getTape().toString());
 		assertFalse(machine.getCurrentState().isAcceptanceState());
 	} 
 	
 	@Test
 	public void testTreta() throws Exception{
 		fr = new FileReaderTXT("machine2.txt");
-		initialInput = new ArrayList<>();
-		//10110
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("1");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("_"); 
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		initialInput.add("_");
-		
-		TuringMachine machine = fr.getMachine(6);
+		String input = "10110";
+		createInput(input);
+ 
+		TuringMachine machine = fr.getMachine(0);
 		machine.setInitialInput(initialInput);
 		machine.run();
-		System.out.println(machine.getTape());
-		
-		/*initialInput.add("_");
-		initialInput.add("1");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("1");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("_");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("1");
-		initialInput.add("0");
-		initialInput.add("1");
-		initialInput.add("1");
-		initialInput.add("_"); */
+		assertEquals("[_, 2, 2, _, _, _, _, _, _, _]", machine.getTape().toString());
+		//System.out.println(machine.getTape());
 	}
 
 }
