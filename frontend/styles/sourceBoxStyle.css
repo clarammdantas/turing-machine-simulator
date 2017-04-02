@@ -1,5 +1,5 @@
 /*
-Source Box Styles
+Source box styles
 Author: Clara Moraes Dantas;
 */
 
@@ -28,10 +28,10 @@ Author: Clara Moraes Dantas;
 }
 
 .rows {
-	border: 2px solid green;
+	border: 2px solid #c9c9c9;
 	position: absolute;
 	z-index: 0;
-	background-color: #f7f7f7;
+	background-color: #c9c9c9;
 	font-family: monospace;
 	font-size: 15px;
 	overflow: hidden;

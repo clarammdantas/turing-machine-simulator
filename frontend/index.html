@@ -12,6 +12,7 @@
 		<link rel=icon href="images/pride.ico">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<link rel="stylesheet" type="text/css" href="styles/sourceBoxStyle.css">
+		<link rel="stylesheet" type="text/css" href="styles/controlButtons.css">
 
 		<script type="text/javascript" defer="defer" src="scripts/jquery-1.11.1.min.js"></script>
 
@@ -60,8 +61,33 @@
 				<div id="copyText"></div>
 			</div>
 
-			<div>
-				
+			<div class="bodyTitlesControl"><div id ="bodyTitlesFontC">Controles</div></div>
+			<div class="controlDiv">
+				<div class="runDiv">
+					<button class="runButton"><p id="textButton">Run</p></button>
+				</div>
+
+				<div class="controlDivBottom">
+					<button class="pauseButton"><p id="textButton">Pause</p></button>
+				</div>
+
+				<div class="controlDivBottom">
+					<button class="stepButton"><p id="textButton">Step</p></button>
+				</div>
+
+				<div class="controlDivBottom">
+					<button class="resetButton"><p id="textButton">Reset</p></button>
+				</div>
+
+				<div id="undoDiv">
+					<button class="undoButton"><p id="textButton">Undo</p></button>
+				</div>
+
+				<div class="inputArea">
+					<form action="">
+						<input id="inputArea" type="text" name="palavra" value="Palavra" onclick="clearInputField()">
+					</form>
+				</div>
 			</div>
 		</div>
 

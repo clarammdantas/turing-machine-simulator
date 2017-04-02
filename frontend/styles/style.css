@@ -122,6 +122,36 @@ div div a {
 	margin-left: 20em;
 	margin-bottom: 0;
 }
+
+.bodyTitlesFontC {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 16px;
+}
+
+.bodyTitlesControl {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 8em;
+	margin: 0 auto;
+	margin-top: -31.5em;
+	margin-left: 66em;
+	margin-bottom: 0;
+}
+
+.controlDiv {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	width: 20em;
+	height: 29.7em;
+	padding: 0;
+	margin-top: -30em;
+	margin-left: 20em;
+	display: inline-block;
+	float: right;
+}
 .underTapeDiv {
 	color: #000000;
 	font-family: Corben, Georgia, Times, sans-serif;

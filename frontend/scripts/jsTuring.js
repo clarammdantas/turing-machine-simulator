@@ -3,6 +3,7 @@
 
 var numberBox = document.getElementById('numbers'),
 	textBox = document.getElementById('source'),
+	inputField = document.getElementById('inputArea'),
 	textAreaLines = -1;
 
 function textAreaChanged()
@@ -39,5 +40,11 @@ function addLine()
 function updateScroll()
 {
 	var backgroundDiv = document.getElementById('rows');
-	backgroundDiv.css({'margin-top': (-1*$(textBox).scrollTop()) + "px"});
+	backgroundDiv.value.css({'margin-top': (-1*$(textBox).value.scrollTop()) + "px"});
+}
+
+function clearInputField()
+{
+	var holder = '<input id="inputArea" type="text" name="palavra" value="maria" onclick="clearInputField()">';
+	inputField.innerHTML = holder;
 }
