@@ -1,5 +1,7 @@
-/*Turing Machine Simulator Style*/
-/*Author: Clara Moraes Dantas*/
+/*
+Turing Machine Simulator Style
+Author: Clara Moraes Dantas
+*/
 
 html, body {
 	font-family: Consolas, Arial, sans-serif;
@@ -69,27 +71,23 @@ div div a {
 	border: 3px solid #d1d1d1;
 	border-radius: 2px;
 	background-color: #e0e0e0;
-	padding-top: 10px;
- 	padding-bottom: 10px;
-  	padding-left: 10px;
-  	padding-right: 10px;
-  	margin-left: 37px;
-  	margin-right: 40px;
-  	margin-top: 90px;
-  	margin-bottom: 10px;
+	padding: 3em 3em 3em 1.5em;
+  	margin: 6em 2em 9em 3.5em;
   	text-align: center;
   	display: inline-block;
-  	height: 800px;
-  	width: 92%;
+  	height: 80em;
+  	width: 80em;
 }
 
 #machineTape {
-	border: 2px solid #f7f7f7;
-	border-radius: 5px;
-	height: 80px;
-	width: 95%;
+	border: 1.5em solid #f7f7f7;
+	border-radius: 2px;
+	border-radius: 2px;
+	height: 2em;
+	width: 76.6em;
 	margin: 0 auto;
 	margin-top: 0;
+	margin-left: 1em;
 	background-color: #f7f7f7;
 }
 
@@ -101,11 +99,10 @@ div div a {
 
 .bodyTitles {
 	border: 2px solid #49b3d1;
-	border-radius: 2px;
 	background-color: #49b3d1;
 	width: 8%;
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: -2em;
 	margin-bottom: 0;
 }
 
@@ -119,10 +116,10 @@ div div a {
 	border: 2px solid #49b3d1;
 	border-radius: 2px;
 	background-color: #49b3d1;
-	width: 10%;
-	height: 40px;
-	margin-left: 29px;
-	margin-top: 8px;
+	width: 8em;
+	height: 2.7em;
+	margin-left: 1em;
+	margin-top: 0.6em;
 	display: inline-block;
 	float: left;
 }
@@ -131,27 +128,10 @@ div div a {
 	border: 2px solid #49b3d1;
 	border-radius: 2px;
 	background-color: #49b3d1;
-	width: 10%;
-	height: 40px;
-	margin-left: 10px;
-	margin-top: 8px;
+	width: 8em;
+	height: 2.7em;
+	margin-left: 1em;
+	margin-top: 0.6em;
 	display: inline-block;
 	float: left;
-}
-
-#source {
-	border: 2px solid #f7f7f7;
-	border-radius: 2px;
-	background-color: #f7f7f7;
-	display: inline;
-	width: 800px;
-	height: 400px;
-	font-family: Corben, Georgia, Times, sans-serif;
-	font-size: 17px;
-	line-height: 17px;
-}
-
-.sourceDiv {
-	margin-top: 100px;
-	margin-left: -320px;
 }

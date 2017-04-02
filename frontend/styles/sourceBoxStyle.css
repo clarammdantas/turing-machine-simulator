@@ -1,0 +1,51 @@
+/*
+Source Box Styles
+Author: Clara Moraes Dantas;
+*/
+
+.sourceDiv {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	width: 52.5em;
+	height: 29.7em;
+	padding: 0;
+	margin-top: 5.7em;
+	margin-left: 1em;
+}
+
+#source {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	display: inline;
+	float: right;
+	width: 40em;
+	height: 24em;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 17px;
+	line-height: 17px;
+}
+
+#lineNumBackground {
+	border: 2px solid green;
+	position: absolute;
+	width: 3%;
+	z-index: 0;
+	font-family: monospace;
+	font-size: 13px;
+	text-align: left;
+	overflow: hidden;
+}
+
+.rows {
+	border: 2px solid green;
+	position: absolute;
+	z-index: 0;
+	background-color: #f7f7f7;
+	font-family: monospace;
+	font-size: 13px;
+	overflow: hidden;
+	text-align: left;
+	width: 3%;
+}
