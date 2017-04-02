@@ -28,12 +28,12 @@ Author: Clara Moraes Dantas;
 }
 
 .rows {
-	border: 2px solid #c9c9c9;
+	border: 2px solid #bcbcbc;
 	position: absolute;
 	z-index: 0;
-	background-color: #c9c9c9;
+	background-color: #bcbcbc;
 	font-family: monospace;
-	font-size: 15px;
+	font-size: 14.8px;
 	overflow: hidden;
 	text-align: left;
 	width: 3%;

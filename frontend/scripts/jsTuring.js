@@ -3,7 +3,6 @@
 
 var numberBox = document.getElementById('numbers'),
 	textBox = document.getElementById('source'),
-	inputField = document.getElementById('inputArea'),
 	textAreaLines = -1;
 
 function textAreaChanged()
@@ -28,6 +27,16 @@ function addLine()
 	for (n = 1; n <= lines; n++) {
 		holder += '<div class="row">' + n + '.</div>';
 	}
+	// if(lines <= 22) {
+	// 	for (n = 1; n <= lines; n++) {
+	// 		holder += '<div class="row">' + n + '.</div>';
+	// 	}
+	// } else {
+	// 	for (n = lines-22; n <= lines; n++) {
+	// 		holder += '<div class="row">' + n + '.</div>';
+	// 	}
+	// }
+	
 
 	if (lines === 0) {
 		holder = '<div class="row">1.</div>';
@@ -39,12 +48,10 @@ function addLine()
 
 function updateScroll()
 {
-	var backgroundDiv = document.getElementById('rows');
-	backgroundDiv.value.css({'margin-top': (-1*$(textBox).value.scrollTop()) + "px"});
-}
-
-function clearInputField()
-{
-	var holder = '<input id="inputArea" type="text" name="palavra" value="maria" onclick="clearInputField()">';
-	inputField.innerHTML = holder;
+	// var backgroundDiv = document.getElementById('numbers');
+	// backgroundDiv.css({'margin-top': (-1*$(textBox).scrollTop()) + "px"});
+	var numbers = $("#numbers");
+	$("#source").scroll(function() {
+		numbers.prop("scrollTop", this.scrollTop);
+	});
 }
