@@ -2,15 +2,27 @@
 // Author: Clara Moraes Dantas
 
 var numberBox = document.getElementById('numbers'),
-	textBox = document.getElementById('source');
+	textBox = document.getElementById('source'),
+	textAreaLines = -1;
+
+function textAreaChanged()
+{
+	var newLines = (textBox.value.match(/\n/g) ? textBox.value.match(/\n/g).length : 0) + 1;
+
+	if (newLines != textAreaLines) {
+		textAreaLines = newLines;
+		addLine();
+	}
+}
 
 function addLine()
 {
 	var textBoxValue = textBox.value;
 	textBox.value.replace( /\r/g, "");
-	textBox.value.split("\n");
 
-	var lines = textBoxValue.length, n = 1, holder = '';
+	var lines = textBox.value.split("\n").length;
+
+	var n = 1, holder = '';
 
 	for (n = 1; n <= lines; n++) {
 		holder += '<div class="row">' + n + '.</div>';
