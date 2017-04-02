@@ -33,4 +33,11 @@ function addLine()
 	}
 
 	numberBox.innerHTML = holder;
+	updateScroll();
+}
+
+function updateScroll()
+{
+	var backgroundDiv = document.getElementById('rows');
+	backgroundDiv.css({'margin-top': (-1*$(textBox).scrollTop()) + "px"});
 }

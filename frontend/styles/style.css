@@ -106,6 +106,22 @@ div div a {
 	margin-bottom: 0;
 }
 
+.bodyTitlesFontP {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 16px;
+}
+
+.bodyTitlesProgram {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 15em;
+	margin: 0 auto;
+	margin-top: 7em;
+	margin-left: 20em;
+	margin-bottom: 0;
+}
 .underTapeDiv {
 	color: #000000;
 	font-family: Corben, Georgia, Times, sans-serif;

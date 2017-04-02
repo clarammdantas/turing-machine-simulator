@@ -10,7 +10,7 @@ Author: Clara Moraes Dantas;
 	width: 52.5em;
 	height: 29.7em;
 	padding: 0;
-	margin-top: 5.7em;
+	margin-top: 0;
 	margin-left: 1em;
 }
 
@@ -27,17 +27,6 @@ Author: Clara Moraes Dantas;
 	line-height: 17px;
 }
 
-#lineNumBackground {
-	border: 2px solid green;
-	position: absolute;
-	width: 3%;
-	z-index: 0;
-	font-family: monospace;
-	font-size: 13px;
-	text-align: left;
-	overflow: hidden;
-}
-
 .rows {
 	border: 2px solid green;
 	position: absolute;
@@ -48,4 +37,5 @@ Author: Clara Moraes Dantas;
 	overflow: hidden;
 	text-align: left;
 	width: 3%;
+	max-height: 27.5em;
 }
