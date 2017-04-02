@@ -5,6 +5,9 @@ var numberBox = document.getElementById('numbers'),
 	textBox = document.getElementById('source'),
 	textAreaLines = -1;
 
+var firstClickInputArea = true,
+	inputAreaText = document.getElementById('inputAreaT');
+
 function textAreaChanged()
 {
 	var newLines = (textBox.value.match(/\n/g) ? textBox.value.match(/\n/g).length : 0) + 1;
@@ -27,16 +30,6 @@ function addLine()
 	for (n = 1; n <= lines; n++) {
 		holder += '<div class="row">' + n + '.</div>';
 	}
-	// if(lines <= 22) {
-	// 	for (n = 1; n <= lines; n++) {
-	// 		holder += '<div class="row">' + n + '.</div>';
-	// 	}
-	// } else {
-	// 	for (n = lines-22; n <= lines; n++) {
-	// 		holder += '<div class="row">' + n + '.</div>';
-	// 	}
-	// }
-	
 
 	if (lines === 0) {
 		holder = '<div class="row">1.</div>';
@@ -48,10 +41,17 @@ function addLine()
 
 function updateScroll()
 {
-	// var backgroundDiv = document.getElementById('numbers');
-	// backgroundDiv.css({'margin-top': (-1*$(textBox).scrollTop()) + "px"});
 	var numbers = $("#numbers");
 	$("#source").scroll(function() {
 		numbers.prop("scrollTop", this.scrollTop);
 	});
+}
+
+function clearInputField()
+{
+	if (firstClickInputArea) {
+		inputAreaText.value = "";
+		inputAreaText.style.color = "black";
+		firstClickInputArea = false;
+	}
 }
