@@ -26,7 +26,7 @@
 			</div>
 
 			<div class="navbarText">
-				<a href="">Instruções</a>
+				<a href="#inst" name="back">Instruções</a>
 			</div>
 
 			<div class="navbarRight">
@@ -146,18 +146,72 @@
 
 			<hr>
 
-			<div class="instruction">
-				<h2>Instruções</h2>
-
-				<h3>Como Usar?</h3>
+			<a name="inst"><div class="instruction">
+				<h5>Como Usar?</h5>
 				<ul>
-					<li>Carregue algum dos nossos exemplos ou escreva sua própria máquina de Turing na área abaixo</li>
-					<li>Coloque o input na caixa de texto que se encontra no controle e clique "Reset para reinicar a máquina."</li>
-					<li>Clique "Run" para iniciar a máquina de turing e rodar até que ela pare.</li>
-					<li>Clique em "Pause" para interromper a máquina enquanto está rodando.</li>
-					<li>Clique em "Step" para rodar um único passo da máquina.</li>
+					<div>
+						<li>Carregue algum dos nossos exemplos ou escreva sua própria máquina de Turing na área abaixo</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Coloque o input na caixa de texto que se encontra no controle e clique "Reset para reinicar a máquina."</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Clique "Run" para iniciar a máquina de turing e rodar até que ela pare.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Clique em "Pause" para interromper a máquina enquanto está rodando.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Clique em "Step" para rodar um único passo da máquina.</li>
+					</div>
 				</ul>
-			</div>
+
+				<h5>Sintaxe</h5>
+
+				<ul>
+					<div>
+						<li>Cada linha deve conter uma tupla na forma: '(estado atual) (símbolo atual) (novo símbolo) (direção) (novo estado)'</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Você pode usar qualquer número ou palavra para (estado atual) e (novo estado)</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Você pode usar qualquer caractere para o (estado atual) e (novo estado)</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>(direção) deve ser l, r ou *. Denotando, respectivamente, esquerda, direita ou não mova.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Qualquer coisa depois de ';' é visto como comentário e ignorado.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>A máquina para quando chega em qualquer estado de aceitação ou rejeição.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>'*' pode ser usado como coringa em (símbolo atual) ou (estado atual)</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>'*' pode ser usado em (novo símbolo) ou (novo estado) significando 'sem mudanças'.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Você pode especificar a posição inicial do cabeçote usando '*' no input inicial.</li>
+					</div>
+				</ul>
+
+				<div class="upDiv"><a href="" name="#back"><img src="images/up.jpg" class="up"></a></div>
+			</div></a>
 		</div>
 
 		<script type="text/javascript" src="scripts/jsTuring.js"></script>
