@@ -5,6 +5,7 @@ Author: Clara Moraes Dantas;
 
 hr {
 	margin-top: 39em;
+	margin-bottom: 1.5em;
 }
 
 .instruction {
@@ -12,4 +13,12 @@ hr {
 	width: 80em;
 	height: 27em;
 	margin-top: 0em;
+}
+
+h2 {
+	font-family: Consolas, Arial, sans-serif;
+}
+
+.insTitle {
+	margin-left: 10em;
 }
