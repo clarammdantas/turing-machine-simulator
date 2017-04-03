@@ -1,5 +1,6 @@
 // Turing Machine Simulator Page Functionalities
 // Author: Clara Moraes Dantas
+// Contributor: Igor Brasileiro
 
 var numberBox = document.getElementById('numbers'),
 	textBox = document.getElementById('source'),
@@ -47,11 +48,9 @@ function updateScroll()
 	});
 }
 
-function clearInputField()
+function blackFont()
 {
-	if (firstClickInputArea) {
-		inputAreaText.value = "";
-		inputAreaText.style.color = "black";
-		firstClickInputArea = false;
-	}
+	inputAreaText.style.color = "black";
 }
+
+

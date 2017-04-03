@@ -71,8 +71,8 @@ div div a {
 	border: 3px solid #d1d1d1;
 	border-radius: 2px;
 	background-color: #e0e0e0;
-	padding: 3em 3em 3em 1.5em;
-  	margin: 6em 2em 9em 3.5em;
+	padding: 3em 2.5em 3em 2.5em;
+  	margin: 6em 2em 9em 3.3em;
   	text-align: center;
   	display: inline-block;
   	height: 80em;
@@ -87,7 +87,7 @@ div div a {
 	width: 76.6em;
 	margin: 0 auto;
 	margin-top: 0;
-	margin-left: 1em;
+	margin-left: 0;
 	background-color: #f7f7f7;
 }
 
@@ -140,18 +140,6 @@ div div a {
 	margin-bottom: 0;
 }
 
-.controlDiv {
-	border: 2px solid #f7f7f7;
-	border-radius: 2px;
-	background-color: #f7f7f7;
-	width: 20em;
-	height: 29.7em;
-	padding: 0;
-	margin-top: -30em;
-	margin-left: 20em;
-	display: inline-block;
-	float: right;
-}
 .underTapeDiv {
 	color: #000000;
 	font-family: Corben, Georgia, Times, sans-serif;
@@ -164,7 +152,7 @@ div div a {
 	background-color: #49b3d1;
 	width: 8em;
 	height: 2.7em;
-	margin-left: 1em;
+	margin-left: 0;
 	margin-top: 0.6em;
 	display: inline-block;
 	float: left;
@@ -180,4 +168,11 @@ div div a {
 	margin-top: 0.6em;
 	display: inline-block;
 	float: left;
+}
+
+.tapeStatusMessage {
+	margin-top: 0.6em;
+	margin-left: -22em;
+	margin-bottom: -3.4em;
+	display: inline-block;
 }

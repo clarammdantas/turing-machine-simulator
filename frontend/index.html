@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<link rel="stylesheet" type="text/css" href="styles/sourceBoxStyle.css">
 		<link rel="stylesheet" type="text/css" href="styles/controlButtons.css">
+		<link rel="stylesheet" type="text/css" href="styles/instructions.css">
 
 		<script type="text/javascript" defer="defer" src="scripts/jquery-1.11.1.min.js"></script>
 
@@ -43,6 +44,9 @@
 			</div>
 
 			<div id="machineTape"></div>
+			<div class="tapeStatusMessage">
+				<p>Carregue algum dos exemplos ou escreva sua própria maquina de Turing!</p>
+			</div>
 
 			<div class="currentState">
 				<div class="underTapeDiv">Estado Atual</div>
@@ -52,23 +56,31 @@
 				<div class="underTapeDiv">Passos</div>
 			</div>
 
-			<div class="bodyTitlesProgram"><div id="bodyTitlesFontP">Programar Máquina de Turing</div></div>
-			<div class="sourceDiv">
-				<div class="rows" id="numbers">
-					<div class="row">1.</div>
-				</div>
-				<textarea id="source" wrap="off" oninput="textAreaChanged();"></textarea>
-				<div id="copyText"></div>
+			<div class="bodyTitlesProgram">
+				<div id="bodyTitlesFontP">Programar Máquina de Turing</div>
 			</div>
 
-			<div class="bodyTitlesControl"><div id ="bodyTitlesFontC">Controles</div></div>
+			<div class="sourceDiv">
+				<div class="rows" id="numbers">  <!--Side bar with line numbers-->
+					<div class="row">1.</div>
+				</div>
+
+				<textarea id="source" wrap="off" oninput="textAreaChanged();"></textarea>
+				<div id="copyText"></div>
+
+				<div class="sendMachine">
+					<button class="sendButton"><p class="sendButtonText">Load<p></button>
+				</div>
+			</div>
+
+			<div class="bodyTitlesControl"><div id ="bodyTitlesFontC">Controle</div></div>
 			<div class="controlDiv">
 				<div class="runDiv">
 					<button class="runButton"><p id="textButton">Run</p></button>
 				</div>
 
 				<div class="controlDivBottom">
-					<button class="pauseButton" value="Pause"><p id="textButton">Pause</p></button>
+					<button class="pauseButton" disabled><p id="textButton" >Pause</p></button>
 				</div>
 
 				<div class="controlDivBottom">
@@ -80,14 +92,62 @@
 				</div>
 
 				<div id="undoDiv">
-					<button class="undoButton"><p id="textButton">Undo</p></button>
+					<button class="undoButton" disabled>
+						<p id="textButton">Undo</p>
+					</button>
 				</div>
 
 				<div class="inputArea">
 					<form action="">
-						<input id="inputAreaT" type="text" name="word" value="Palavra" onclick="clearInputField()">
+						<input id="inputAreaT" type="text" name="word" placeholder="Palavra" onclick="blackFont()">
 					</form>
 				</div>
+
+				<div class="runExamples">
+					<div><p>Carregue um Exemplo</p></div>
+
+					<div class="examples">
+						<ul>
+							<a href="#">
+								<li>Detector de Palíndromo</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Soma Binária</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Múltiplicação Binária</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Conversão Binário-Decimal</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Máquina de Sequência de Turing</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Checador de Parênteses</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Teste de Primalidade</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Máquina Universal de Turing</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="instruction">
+			
 			</div>
 		</div>
 

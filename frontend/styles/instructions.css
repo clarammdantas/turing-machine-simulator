@@ -1,0 +1,15 @@
+/*
+Source box styles
+Author: Clara Moraes Dantas;
+*/
+
+hr {
+	margin-top: 39em;
+}
+
+.instruction {
+	background-color: #f7f7f7;
+	width: 80em;
+	height: 27em;
+	margin-top: 0em;
+}

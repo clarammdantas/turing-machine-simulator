@@ -3,6 +3,18 @@ Control buttons style
 Author: Clara Moraes Dantas;
 */
 
+.controlDiv {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	width: 20em;
+	height: 29.7em;
+	padding: 0;
+	margin-top: -30em;
+	margin-left: 20em;
+	display: inline-block;
+	float: right;
+}
 .runDiv {
 	margin-top: 1em;
 	margin-left: 1.2em;
@@ -32,7 +44,21 @@ Author: Clara Moraes Dantas;
 }
 
 .pauseButton {
-	background-color: #49b3d1; /* Green */
+	background-color: #49b3d1;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 13px 24px;
+    margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13.333px;
+    height: 2em;
+    display: block;
+}
+
+.pauseButton:disabled {
+	background-color: #aee2ef;
     border: none;
     border-radius: 4px;
     color: black;
@@ -50,7 +76,21 @@ Author: Clara Moraes Dantas;
 }
 
 .stepButton {
-	background-color: #49b3d1; /* Green */
+	background-color: #49b3d1;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 13px 29px;
+    margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13.333px;
+    height: 2em;
+    display: block;
+}
+
+.stepButton:disabled {
+	background-color: #aee2ef;
     border: none;
     border-radius: 4px;
     color: black;
@@ -64,7 +104,21 @@ Author: Clara Moraes Dantas;
 }
 
 .resetButton {
-	background-color: #49b3d1; /* Green */
+	background-color: #49b3d1;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 13px 26px;
+    margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13.333px;
+    height: 2em;
+    display: block;
+}
+
+.resetButton:disabled {
+	background-color: #aee2ef;
     border: none;
     border-radius: 4px;
     color: black;
@@ -78,7 +132,21 @@ Author: Clara Moraes Dantas;
 }
 
 .undoButton {
-	background-color: #49b3d1; /* Green */
+	background-color: #49b3d1;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 13px 26px;
+    margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13.333px;
+    height: 2em;
+    display: inline-block;
+}
+
+.undoButton:disabled {
+	background-color: #aee2ef;
     border: none;
     border-radius: 4px;
     color: black;
@@ -103,5 +171,33 @@ Author: Clara Moraes Dantas;
 
 input {
 	border-radius: 4px;
+	font-size: 13px;
+	height: 1.3em;
 	color: #adabab;
+}
+
+a, ul, li {
+	font-family: Consolas, Arial, sans-serif;
+	font-size: 13.5px;
+	text-align: left;
+	-webkit-text-size-adjust
+}
+
+.runExamples {
+	width: 20em;
+	height: 17em;
+}
+
+.examples {
+	width:20em;
+	height: 14em;
+}
+
+.adjustMarginTop {
+	margin-top: 0.4em;
+}
+
+.examples a:hover {
+	text-decoration: underline;
+	color: #3fa9c6;
 }
