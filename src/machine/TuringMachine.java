@@ -23,6 +23,11 @@ public class TuringMachine {
 	}
 	
 	
+	/**
+	 * Baseado no que é lido na fita a maquina de turing determina para qual estado ir
+	 * @throws Exception
+	 * 			Caso nao exista estado adjacente para o que foi lido na fita
+	 */
 	public void nextStep() throws Exception{
 		
 		TuringState nextState = currentState.getAdjacency(tape.get(headPosition));
@@ -49,12 +54,19 @@ public class TuringMachine {
 		this.currentState = nextState;
 	}
 	
+	/**
+	 * Executa o metodo nextStep ate que se chegue num estado de aceitacao ou de lixo
+	 * @throws Exception
+	 */
 	public void run() throws Exception{
 		while (!currentState.isAcceptanceState() && !currentState.isGarbageState()){
 			this.nextStep();
 		}
 	}
 	
+	/**
+	 * Reseta a fita para a entrada inicial e volta para o estado inicial
+	 */
 	public void reset(){
 		this.tape = initialInput;
 		this.headPosition = initialPosition;
@@ -75,5 +87,11 @@ public class TuringMachine {
 	
 	public void setInitialInput(LinkedList<String> initialInput) {
 		this.tape = initialInput;
+		if (this.initialInput == null)
+			this.initialInput = initialInput;
+	}
+	
+	public void setHeadPosition(int i){
+		this.headPosition = i;
 	}
 }

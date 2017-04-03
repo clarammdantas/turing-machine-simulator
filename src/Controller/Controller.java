@@ -53,6 +53,8 @@ public class Controller {
 		for (int i = 0; i < input.length(); i++){
 			if (!input.substring(i, i + 1).equals(" "))
 				finalInput.add(input.substring(i, i + 1));
+			else if (input.substring(i, i + 1).equals("*"))
+				machine.setHeadPosition(i);
 			else
 				finalInput.add("_");
 		}

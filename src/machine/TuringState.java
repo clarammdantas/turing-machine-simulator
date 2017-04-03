@@ -21,6 +21,12 @@ public class TuringState {
 		this.action = new HashMap<> ();
 	}
 	
+	/**
+	 * Retorna o estado adjacente que
+	 * @param currentSymbol
+	 * @return
+	 * @throws Exception
+	 */
 	public TuringState getAdjacency(String currentSymbol) throws Exception{
 		if(this.action.containsKey(currentSymbol))
 			return this.adjacency.get(currentSymbol);
@@ -47,6 +53,13 @@ public class TuringState {
 		this.action.put(currentSymbol, action);
 	}
 	
+	/**
+	 * Metodo que retorna a acao que deve ser tomada na fita (o que escrever e pra que lado ir)
+	 * @param currentSymbol
+	 * 				Simbolo lido na fita
+	 * @return
+	 * 				String contendo a acao que deve ser feita
+	 */
 	public String getAction(String currentSymbol){
 		if (this.action.containsKey(currentSymbol)){
 			return this.action.get(currentSymbol);
