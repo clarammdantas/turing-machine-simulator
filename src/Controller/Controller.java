@@ -11,6 +11,15 @@ public class Controller {
 
 	TuringMachine machine;
 	FileReaderTXT fileReader;
+	ArrayList<LinkedList<String>> oldTapeStates;
+	ArrayList<TuringState> oldStates;
+	ArrayList<Integer> oldHead;
+	
+	public Controller(){
+		oldTapeStates = new ArrayList<>();
+		oldStates = new ArrayList<>();
+		oldHead = new ArrayList<>();
+	}
 	
 	public void readFile(String fileName) throws Exception {
 		fileReader = new FileReaderTXT(fileName);
@@ -25,11 +34,28 @@ public class Controller {
 	}
 	
 	public void machineRun() throws Exception {
-		machine.run();
+		while (!machine.getCurrentState().isAcceptanceState() && !machine.getCurrentState().isGarbageState()){
+			oldHead.add(machine.getHeadPosition());
+			oldStates.add(machine.getCurrentState());
+			oldTapeStates.add(machine.getTape());
+			machine.nextStep();
+			
+		}
 	}
 	
 	public void machineNextStep() throws Exception{
 		machine.nextStep();
+	}
+	
+	public void undo(){
+		machine.setHeadPosition(oldHead.get(oldHead.size() - 1));
+		oldHead.remove(oldHead.size() - 1);
+		
+		machine.setState(oldStates.get(oldStates.size() - 1));
+		oldStates.remove(oldHead.size() - 1);
+		
+		machine.setInitialInput(oldTapeStates.get(oldTapeStates.size() - 1));
+		oldTapeStates.remove(oldTapeStates.size() - 1);
 	}
 	
 	public void machineReset() {
@@ -46,6 +72,18 @@ public class Controller {
 	
 	public String getMachineTape() {
 		return machine.getTape().toString();
+	}
+	
+	public ArrayList<LinkedList<String>> getOldTapeStates(){
+		return this.oldTapeStates;
+	}
+	
+	public ArrayList<Integer> getOldHead(){
+		return this.oldHead;
+	}
+	
+	public ArrayList<TuringState> getOldStates(){
+		return this.getOldStates();
 	}
 	
 	public LinkedList<String> createFinalInput(String input){

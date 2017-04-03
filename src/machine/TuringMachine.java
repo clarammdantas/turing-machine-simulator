@@ -94,4 +94,8 @@ public class TuringMachine {
 	public void setHeadPosition(int i){
 		this.headPosition = i;
 	}
+	
+	public void setState(TuringState state){
+		this.currentState = state;
+	}
 }
