@@ -82,7 +82,7 @@ public class TuringMachine {
 		return this.headPosition;
 	}
 	
-	public TuringState getCurrentState(){
+	public TuringState getCurrentState() throws CloneNotSupportedException{
 		return this.currentState;
 	}
 	

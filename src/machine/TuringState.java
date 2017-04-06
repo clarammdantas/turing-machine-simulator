@@ -7,7 +7,7 @@ import java.util.HashMap;
  * @author JoaoCarvalho
  *
  */
-public class TuringState {
+public class TuringState implements Cloneable {
 	
 	private boolean isAcceptanceState;
 	private boolean isGarbageState;
@@ -81,4 +81,8 @@ public class TuringState {
 	public String toString(){
 		return this.name;
 	}
+	
+	public TuringState clone() throws CloneNotSupportedException {
+        return (TuringState) super.clone();
+    }
 }
