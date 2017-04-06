@@ -13,12 +13,14 @@ public class TuringState {
 	private boolean isGarbageState;
 	private HashMap<String, TuringState> adjacency;
 	private HashMap<String, String> action;
+	private String name;
   
-	public TuringState(boolean isAcceptanceState, boolean isGarbageState){
+	public TuringState(boolean isAcceptanceState, boolean isGarbageState, String name){
 		this.isAcceptanceState = isAcceptanceState;
 		this.isGarbageState = isGarbageState;
 		this.adjacency = new HashMap<>();
 		this.action = new HashMap<> ();
+		this.name = name;
 	}
 	
 	/**
@@ -74,5 +76,9 @@ public class TuringState {
 	
 	public boolean isGarbageState(){
 		return this.isGarbageState;
+	}
+	
+	public String toString(){
+		return this.name;
 	}
 }

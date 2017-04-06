@@ -103,4 +103,12 @@ public class Controller {
 		LinkedList<String> finalInitialInput = createFinalInput(initialInput);
 		machine.setInitialInput(finalInitialInput);
 	}
+	
+	public boolean isAcceptanceState(){
+		return this.machine.isAcceptanceState();
+	}
+	
+	public boolean isGarbageState(){
+		return this.machine.isGarbageState();
+	}
 }

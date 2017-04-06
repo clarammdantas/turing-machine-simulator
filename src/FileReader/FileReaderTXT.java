@@ -57,11 +57,11 @@ public class FileReaderTXT {
 
 		if(!machine.containsKey(stateName)) {
 			if(stateName.equals("accept")) {
-				machine.put(stateName, new TuringState(true, false));
+				machine.put(stateName, new TuringState(true, false, stateName));
 			} else if(stateName.equals("reject")) {
-				machine.put(stateName, new TuringState(false, true));
+				machine.put(stateName, new TuringState(false, true, stateName));
 			} else {
-				machine.put(stateName, new TuringState(false, false));
+				machine.put(stateName, new TuringState(false, false, stateName));
 			}
 		}
 	}
