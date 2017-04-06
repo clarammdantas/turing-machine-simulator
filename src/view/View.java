@@ -50,7 +50,11 @@ public class View {
 
 		} while (opcao != "3");
 	}
-
+	
+	/**
+	 * Roda alguma das máquinas de exemplo.
+	 * @throws Exception
+	 */
 	private void exampleMachine() throws Exception {
 		System.out.println("Digite a opção correspondente a máquina:");
 		System.out.println("1 - Palíndromo binário");
@@ -93,7 +97,11 @@ public class View {
 		
 		runOrStep(op);
 	}
-
+	
+	/**
+	 * Roda a máquina do usuário.
+	 * @throws Exception
+	 */
 	private void userMachine() throws Exception {
 		System.out.println("Escolha o arquivo correspondente a maquina que você deseja executar.");
 		
@@ -114,14 +122,24 @@ public class View {
 		runOrStep(op);
 	}
 	
+	/**
+	 * Executa a máquina de uma só vez ou passo a passo.
+	 * @param op
+	 * @throws Exception
+	 */
 	private void runOrStep(String op) throws Exception {
 		if (op.equals("1")) {
 			System.out.println("Aperte enter para executar próximo passo!");
+			System.out.println("Digite undo para voltar para o passo anterior.");
 			String continua;
 			continua = in.nextLine();
 			
-			while(continua.isEmpty() && !controller.isAcceptanceState() && !controller.isGarbageState()) {
+			while(continua.isEmpty() || continua.equals("undo") && !controller.isAcceptanceState() && !controller.isGarbageState()) {
 				controller.machineNextStep();
+				
+				if (continua.equals("undo"))
+					controller.undo();
+				
 				continua = in.nextLine();
 			}
 			

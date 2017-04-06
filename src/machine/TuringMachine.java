@@ -27,6 +27,7 @@ public class TuringMachine {
 	
 	/**
 	 * Baseado no que é lido na fita a maquina de turing determina para qual estado ir
+	 * Imprime o estado atual, estado da fita e a posição do cabeçote.
 	 * @throws Exception
 	 * 			Caso nao exista estado adjacente para o que foi lido na fita
 	 */
