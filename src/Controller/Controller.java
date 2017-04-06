@@ -106,18 +106,22 @@ public class Controller {
 	}
 
 	public void setMachineInitialInput(String initialInput) {
-		LinkedList<String> finalInitialInput = createFinalInput(initialInput);
-
-		machine.setHeadPosition(headPosition(initialInput));
-		machine.setInitialInput(finalInitialInput);
+		String input = getInitialString(initialInput);
+		
+		LinkedList<String> finalInitialInput = createFinalInput(input);
 	}
 
-	private int headPosition(String initialInput) {
-		if (initialInput.indexOf("*") != -1) {
-			return initialInput.indexOf("*") + 1;
-		} else {
-			return 0;
+	private String getInitialString(String input) {
+		if (input.contains("*")) {
+			String[] newString = input.split("*");
+			
+			machine.setHeadPosition(newString[0].length());
+			String newInput = newString[0].concat(newString[1]);
+			
+			return newInput;
 		}
+		
+		return input;
 	}
 
 	public boolean isAcceptanceState(){
