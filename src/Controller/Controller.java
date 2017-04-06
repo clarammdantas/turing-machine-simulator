@@ -47,6 +47,9 @@ public class Controller {
 		machine.nextStep();
 	}
 	
+	/**
+	 * Volta um passo na execução da máquina.
+	 */
 	public void undo(){
 		machine.setHeadPosition(oldHead.get(oldHead.size() - 1));
 		oldHead.remove(oldHead.size() - 1);
@@ -102,6 +105,16 @@ public class Controller {
 	public void setMachineInitialInput(String initialInput) {
 		LinkedList<String> finalInitialInput = createFinalInput(initialInput);
 		machine.setInitialInput(finalInitialInput);
+		
+		machine.setHeadPosition(headPosition(initialInput));
+	}
+	
+	private int headPosition(String initialInput) {
+		if (initialInput.indexOf("*") != -1)
+			return initialInput.indexOf("*") + 1;
+		
+		else
+			return 0;
 	}
 	
 	public boolean isAcceptanceState(){
