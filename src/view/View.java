@@ -14,7 +14,7 @@ public class View {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		int opcao;
+		String opcao;
 		
 		do {
 			System.out.println("Digite sua opção:");
@@ -23,15 +23,15 @@ public class View {
 			System.out.println("3 - Encerrar");
 			
 			System.out.print("Opção: ");
-			opcao = in.nextInt();
+			opcao = in.nextLine();
 			
 			switch (opcao) {
-			case 1:
+			case "1":
 				exampleMachine();
 			
-			case 2:
+			case "2":
 				
-			case 3:
+			case "3":
 				break;
 				
 			default:
@@ -39,7 +39,7 @@ public class View {
 				break;
 			}
 			
-		} while (opcao != 3);
+		} while (opcao != "3");
 	}
 	
 	private static void exampleMachine() throws Exception {
@@ -50,25 +50,25 @@ public class View {
 		System.out.println("4 - Checa parênteses");
 		
 		System.out.print("Opção: ");
-		int opcao = in.nextInt();
+		String opcao = in.nextLine();
 		
 		switch (opcao) {
-		case 1:
+		case "1":
 			controller.readFile("machine.txt");
 			controller.createMachineFromFile();
 			break;
 			
-		case 2:
+		case "2":
 			controller.readFile("machine2.txt");
 			controller.createMachineFromFile();
 			break;
 			
-		case 3:
+		case "3":
 			controller.readFile("machine3.txt");
 			controller.createMachineFromFile();
 			break;
 			
-		case 4:
+		case "4":
 			controller.readFile("machine4.txt");
 			controller.createMachineFromFile();
 			break;
