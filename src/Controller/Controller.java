@@ -50,8 +50,9 @@ public class Controller {
 
 	/**
 	 * Volta um passo na execução da máquina.
+	 * @throws CloneNotSupportedException 
 	 */
-	public void undo(){
+	public void undo() throws CloneNotSupportedException{
 		machine.setHeadPosition(oldHead.get(oldHead.size() - 1));
 		oldHead.remove(oldHead.size() - 1);
 
@@ -72,7 +73,7 @@ public class Controller {
 		return machine.getHeadPosition();
 	}
 
-	public TuringState getCurrentMachineState() {
+	public TuringState getCurrentMachineState() throws CloneNotSupportedException {
 		return machine.getCurrentState();
 	}
 
@@ -128,13 +129,13 @@ public class Controller {
 		return this.machine.isGarbageState();
 	}
 
-	public void saveState() {
+	public void saveState() throws CloneNotSupportedException {
 		oldHead.add(machine.getHeadPosition());
-		oldStates.add(machine.getCurrentState());
-		oldTapeStates.add(machine.getTape());
+		oldStates.add(machine.getCurrentState().clone());
+		oldTapeStates.add((LinkedList<String>) machine.getTape().clone());
 	}
 
-	public void printMachine() {
+	public void printMachine() throws CloneNotSupportedException {
 		StringBuilder sb = new StringBuilder();
 
 		// estado atual, fita , posicao do cabecote
