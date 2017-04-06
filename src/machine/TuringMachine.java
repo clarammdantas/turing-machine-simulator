@@ -1,7 +1,5 @@
 package machine;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 
 
@@ -12,7 +10,6 @@ public class TuringMachine {
 	private int headPosition;
 	private int initialPosition;
 	private TuringState initialState;
-	private static final String newLine = System.getProperty("line.separator").toString();
 	
 	public TuringMachine(LinkedList<String> initialInput, int initialPosition, TuringState initialState){
 		this.tape = initialInput;
@@ -33,18 +30,6 @@ public class TuringMachine {
 	 */
 	public void nextStep() throws Exception{
 		
-		StringBuilder sb = new StringBuilder();
-		
-		// estado atual, fita , posicao do cabecote
-		
-		sb.append("Estado atual: " + currentState.toString() + newLine);
-		sb.append(getTape().toString() + newLine);
-		for(int i = 0; i < getHeadPosition(); i++) {
-			sb.append("   ");
-		}
-		sb.append(" ^" +newLine);
-		
-		System.out.println(sb.toString());
 		
 		TuringState nextState = currentState.getAdjacency(tape.get(headPosition));
 		String[] action = currentState.getAction(tape.get(headPosition)).split(" ");

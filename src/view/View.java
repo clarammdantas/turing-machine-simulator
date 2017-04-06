@@ -14,7 +14,7 @@ public class View {
 	public View() {
 		View.controller = new Controller();
 	}
-	
+
 
 	public static void main(String[] args) throws Exception {
 		View view = new View();
@@ -38,7 +38,7 @@ public class View {
 			case "2":
 				view.userMachine();
 				break;
-				
+
 			case "3":
 				opcao = "3";
 				break;
@@ -50,7 +50,7 @@ public class View {
 
 		} while (opcao != "3");
 	}
-	
+
 	/**
 	 * Roda alguma das máquinas de exemplo.
 	 * @throws Exception
@@ -94,61 +94,73 @@ public class View {
 		System.out.println("Caso contrário, digite 2.");
 
 		String op = in.nextLine();
-		
+
 		runOrStep(op);
 	}
-	
+
 	/**
 	 * Roda a máquina do usuário.
 	 * @throws Exception
 	 */
 	private void userMachine() throws Exception {
 		System.out.println("Escolha o arquivo correspondente a maquina que você deseja executar.");
-		
+
 		JFileChooser machinePath = new JFileChooser();
 		machinePath.showOpenDialog(null);
-		
+
 		controller.readFile(machinePath.getSelectedFile().getAbsolutePath());
 		controller.createMachineFromFile();
-		
+
 		System.out.println("Digite a palavra: ");
 		controller.setMachineInitialInput(in.nextLine());
-
+		controller.saveState();
+		
 		System.out.println("Digite 1 se você quer ver a máquina executar passo a passo.");
 		System.out.println("Caso contrário, digite 2.");
 
 		String op = in.nextLine();
-		
+
 		runOrStep(op);
 	}
-	
+
 	/**
 	 * Executa a máquina de uma só vez ou passo a passo.
 	 * @param op
 	 * @throws Exception
 	 */
 	private void runOrStep(String op) throws Exception {
+		controller.printMachine();
 		if (op.equals("1")) {
 			System.out.println("Aperte enter para executar próximo passo!");
 			System.out.println("Digite undo para voltar para o passo anterior.");
 			String continua;
 			continua = in.nextLine();
-			
-			while(continua.isEmpty() || continua.equals("undo") && !controller.isAcceptanceState() && !controller.isGarbageState()) {
-				controller.machineNextStep();
-				
-				if (continua.equals("undo"))
+
+			boolean flagUndo = false;
+
+			while(!controller.isAcceptanceState() && !controller.isGarbageState()) {
+
+
+				if (flagUndo && continua.equals("undo")) {
 					controller.undo();
-				
+				}
+
+				else if(continua.isEmpty()) {
+					flagUndo = true;
+					controller.machineNextStep();
+				} else {
+					System.out.println("Comando invalido. Pressione enter para próximo passo ou digite undo, caso queira voltar passo anterior");
+				}
+
 				continua = in.nextLine();
 			}
-			
+
 		} else {
 			controller.machineRun();
 		}
-		
+
 		if(controller.isAcceptanceState()) System.out.println("turing decidível :D"+ line);
 		else if(controller.isGarbageState()) System.out.println("turing decidível :("+line);
-		
+
 	}
 }
