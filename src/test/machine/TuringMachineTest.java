@@ -1,4 +1,4 @@
-package test.machine;
+/*package test.machine;
 
 import static org.junit.Assert.*;
 
@@ -78,4 +78,4 @@ public class TuringMachineTest {
 		//System.out.println(machine.getCurrentState().isAcceptanceState());
 	}
 
-}
+}*/

@@ -1,12 +1,12 @@
 package view;
 
+import javax.swing.JFileChooser;
 import java.util.Scanner;
 
 import Controller.Controller;
 
 public class View {
 	private static final String line = System.getProperty("line.separator").toString();
-
 	public static Scanner in = new Scanner(System.in);
 
 	private static Controller controller;
@@ -14,6 +14,7 @@ public class View {
 	public View() {
 		View.controller = new Controller();
 	}
+	
 
 	public static void main(String[] args) throws Exception {
 		View view = new View();
@@ -32,10 +33,14 @@ public class View {
 			switch (opcao) {
 			case "1":
 				view.exampleMachine();
+				break;
 
 			case "2":
-
+				view.userMachine();
+				break;
+				
 			case "3":
+				opcao = "3";
 				break;
 
 			default:
@@ -85,9 +90,31 @@ public class View {
 		System.out.println("Caso contrário, digite 2.");
 
 		String op = in.nextLine();
+		
+		runOrStep(op);
+	}
 
+	private void userMachine() throws Exception {
+		System.out.println("Escolha o arquivo correspondente a maquina que você deseja executar.");
 		
+		JFileChooser machinePath = new JFileChooser();
+		machinePath.showOpenDialog(null);
 		
+		controller.readFile(machinePath.getSelectedFile().getAbsolutePath());
+		controller.createMachineFromFile();
+		
+		System.out.println("Digite a palavra: ");
+		controller.setMachineInitialInput(in.nextLine());
+
+		System.out.println("Digite 1 se você quer ver a máquina executar passo a passo.");
+		System.out.println("Caso contrário, digite 2.");
+
+		String op = in.nextLine();
+		
+		runOrStep(op);
+	}
+	
+	private void runOrStep(String op) throws Exception {
 		if (op.equals("1")) {
 			System.out.println("Aperte enter para executar próximo passo!");
 			String continua;
@@ -104,27 +131,6 @@ public class View {
 		
 		if(controller.isAcceptanceState()) System.out.println("turing decidível :D"+ line);
 		else if(controller.isGarbageState()) System.out.println("turing decidível :("+line);
-	}
-
-	private static void runMachine() {
-		System.out.print("Digite a palavra: ");
-		String input = in.nextLine();
-
-		controller.setMachineInitialInput(input);
-	}
-
-	private static void runMachineStepByStep() {
-		System.out.println("Digite a palavra: ");
-		String input = in.nextLine();
-
-		controller.setMachineInitialInput(input);
-
-
-	}
-
-	private void userMachine() {
-		System.out.println("Escreva a localização do programa da sua máquina:");
-
-
+		
 	}
 }
