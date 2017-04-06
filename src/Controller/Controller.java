@@ -107,17 +107,17 @@ public class Controller {
 
 	public void setMachineInitialInput(String initialInput) {
 		LinkedList<String> finalInitialInput = createFinalInput(initialInput);
-		machine.setInitialInput(finalInitialInput);
 
 		machine.setHeadPosition(headPosition(initialInput));
+		machine.setInitialInput(finalInitialInput);
 	}
 
 	private int headPosition(String initialInput) {
-		if (initialInput.indexOf("*") != -1)
+		if (initialInput.indexOf("*") != -1) {
 			return initialInput.indexOf("*") + 1;
-
-		else
+		} else {
 			return 0;
+		}
 	}
 
 	public boolean isAcceptanceState(){
