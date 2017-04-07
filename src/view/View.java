@@ -115,7 +115,7 @@ public class View {
 		controller.setMachineInitialInput(in.nextLine());
 		
 		System.out.println("Digite 1 se você quer ver a máquina executar passo a passo.");
-		System.out.println("Caso contrário, digite 2.");
+		System.out.println("Digite 2 se você quer executar run");
 
 		String op = in.nextLine();
 
@@ -154,8 +154,10 @@ public class View {
 				continua = in.nextLine();
 			}
 
-		} else {
+		} else if(op.equals("2")) {
 			controller.machineRun();
+		} else {
+			System.out.println("Você digitou opção inexistente, voltará para o início");
 		}
 
 		if(controller.isAcceptanceState()) System.out.println("turing decidível :D"+ line);
