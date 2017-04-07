@@ -113,7 +113,6 @@ public class View {
 
 		System.out.println("Digite a palavra: ");
 		controller.setMachineInitialInput(in.nextLine());
-		controller.saveState();
 		
 		System.out.println("Digite 1 se você quer ver a máquina executar passo a passo.");
 		System.out.println("Caso contrário, digite 2.");
