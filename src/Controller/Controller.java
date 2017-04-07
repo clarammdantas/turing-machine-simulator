@@ -110,11 +110,12 @@ public class Controller {
 		String input = getInitialString(initialInput);
 		
 		LinkedList<String> finalInitialInput = createFinalInput(input);
+		machine.setInitialInput(finalInitialInput);
 	}
 
 	private String getInitialString(String input) {
 		if (input.contains("*")) {
-			String[] newString = input.split("*");
+			String[] newString = input.split("\\*");
 			
 			machine.setHeadPosition(newString[0].length());
 			String newInput = newString[0].concat(newString[1]);
