@@ -1,4 +1,4 @@
-package state;
+package machine;
  
 import java.util.HashMap;
  
@@ -7,24 +7,35 @@ import java.util.HashMap;
  * @author JoaoCarvalho
  *
  */
-public class TuringState {
+public class TuringState implements Cloneable {
+	
 	private boolean isAcceptanceState;
 	private boolean isGarbageState;
 	private HashMap<String, TuringState> adjacency;
 	private HashMap<String, String> action;
+	private String name;
   
-	public TuringState(boolean isAcceptanceState, boolean isGarbageState){
+	public TuringState(boolean isAcceptanceState, boolean isGarbageState, String name){
 		this.isAcceptanceState = isAcceptanceState;
 		this.isGarbageState = isGarbageState;
 		this.adjacency = new HashMap<>();
 		this.action = new HashMap<> ();
+		this.name = name;
 	}
 	
-	public TuringState getAdjacency(String currentSymbol){
+	/**
+	 * Retorna o estado adjacente que
+	 * @param currentSymbol
+	 * @return
+	 * @throws Exception
+	 */
+	public TuringState getAdjacency(String currentSymbol) throws Exception{
 		if(this.action.containsKey(currentSymbol))
 			return this.adjacency.get(currentSymbol);
+		else if(this.action.containsKey("*"))
+			return this.adjacency.get("*"); 
 		else
-			return this.adjacency.get("*");
+			throw new Exception("Transição não existe");
 	}
 
 	/**
@@ -44,6 +55,13 @@ public class TuringState {
 		this.action.put(currentSymbol, action);
 	}
 	
+	/**
+	 * Metodo que retorna a acao que deve ser tomada na fita (o que escrever e pra que lado ir)
+	 * @param currentSymbol
+	 * 				Simbolo lido na fita
+	 * @return
+	 * 				String contendo a acao que deve ser feita
+	 */
 	public String getAction(String currentSymbol){
 		if (this.action.containsKey(currentSymbol)){
 			return this.action.get(currentSymbol);
@@ -59,4 +77,12 @@ public class TuringState {
 	public boolean isGarbageState(){
 		return this.isGarbageState;
 	}
+	
+	public String toString(){
+		return this.name;
+	}
+	
+	public TuringState clone() throws CloneNotSupportedException {
+        return (TuringState) super.clone();
+    }
 }

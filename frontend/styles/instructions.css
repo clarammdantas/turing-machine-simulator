@@ -1,0 +1,48 @@
+/*
+Source box styles
+Author: Clara Moraes Dantas;
+*/
+
+hr {
+	margin-top: 39em;
+	margin-bottom: 1.5em;
+}
+
+.instruction {
+	background-color: #f7f7f7;
+	width: 80em;
+	height: 37em;
+	margin-top: 0em;
+}
+
+h2 {
+	font-family: Consolas, Arial, sans-serif;
+}
+
+.howToUse {
+	margin-left: -72em;
+}
+
+.howToUseFont {
+	font-weight: bold;
+}
+
+.howToUseTopics {
+	margin-top: 0.5em;
+}
+
+.sintaxe {
+	margin-left: -74em;
+}
+
+.up {
+	width: 2em;
+	height: 2em;
+}
+
+.upDiv {
+	margin-right: 10em;
+	margin-top: -4em;
+	display: inline-block;
+	float: right;
+}

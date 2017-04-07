@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Turing Machine Simulator">
+		<meta name="keywords" content="Turing,Machine,Simulator">
+		<meta name="author" content="Clara Moraes Dantas">
+
+		<title>Turing Machine Simulator</title>
+
+		<link rel=icon href="images/pride.ico">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="styles/sourceBoxStyle.css">
+		<link rel="stylesheet" type="text/css" href="styles/controlButtons.css">
+		<link rel="stylesheet" type="text/css" href="styles/instructions.css">
+
+		<script type="text/javascript" defer="defer" src="scripts/jquery-1.11.1.min.js"></script>
+
+	</head>
+
+	<body>
+		<div id="navbar">
+			<div class="navbarIcon">
+				<a href="index.html"><img id="navbarImg" src="images/menu.png"></a>
+			</div>
+
+			<div class="navbarText">
+				<a href="#inst" name="back">Instruções</a>
+			</div>
+
+			<div class="navbarRight">
+				<a href="">Info</a>
+			</div>
+
+			<div class="navbarTextRight">
+				<a href="team.html">Equipe</a>
+			</div>
+		</div>
+
+		<div id="mainBox">
+			<div class="bodyTitles">
+				<div id="bodyTitlesFont">Fita</div>
+			</div>
+
+			<div id="machineTape"></div>
+			<div class="tapeStatusMessage">
+				<p>Carregue algum dos exemplos ou escreva sua própria maquina de Turing!</p>
+			</div>
+
+			<div class="currentState">
+				<div class="underTapeDiv">Estado Atual</div>
+			</div>
+
+			<div id="steps">
+				<div class="underTapeDiv">Passos</div>
+			</div>
+
+			<div class="bodyTitlesProgram">
+				<div id="bodyTitlesFontP">Programar Máquina de Turing</div>
+			</div>
+
+			<div class="sourceDiv">
+				<div class="rows" id="numbers">  <!--Side bar with line numbers-->
+					<div class="row">1.</div>
+				</div>
+
+				<textarea id="source" wrap="off" oninput="textAreaChanged();"></textarea>
+				<div id="copyText"></div>
+
+				<div class="sendMachine">
+					<button class="sendButton"><p class="sendButtonText">Load<p></button>
+				</div>
+			</div>
+
+			<div class="bodyTitlesControl"><div id ="bodyTitlesFontC">Controle</div></div>
+			<div class="controlDiv">
+				<div class="runDiv">
+					<button class="runButton"><p id="textButton">Run</p></button>
+				</div>
+
+				<div class="controlDivBottom">
+					<button class="pauseButton" disabled><p id="textButton" >Pause</p></button>
+				</div>
+
+				<div class="controlDivBottom">
+					<button class="stepButton"><p id="textButton">Step</p></button>
+				</div>
+
+				<div class="controlDivBottom">
+					<button class="resetButton"><p id="textButton">Reset</p></button>
+				</div>
+
+				<div id="undoDiv">
+					<button class="undoButton" disabled>
+						<p id="textButton">Undo</p>
+					</button>
+				</div>
+
+				<div class="inputArea">
+					<form action="">
+						<input id="inputAreaT" type="text" name="word" placeholder="Palavra" onclick="blackFont()">
+					</form>
+				</div>
+
+				<div class="runExamples">
+					<div><p>Carregue um Exemplo</p></div>
+
+					<div class="examples">
+						<ul>
+							<a href="#">
+								<li>Detector de Palíndromo</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Soma Binária</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Múltiplicação Binária</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Conversão Binário-Decimal</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Máquina de Sequência de Turing</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Checador de Parênteses</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Teste de Primalidade</li>
+							</a>
+
+							<a href="#">
+								<li class="adjustMarginTop">Máquina Universal de Turing</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<a name="inst"><div class="instruction">
+				<h5>Como Usar?</h5>
+				<ul>
+					<div>
+						<li>Carregue algum dos nossos exemplos ou escreva sua própria máquina de Turing na área abaixo</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Coloque o input na caixa de texto que se encontra no controle e clique "Reset para reinicar a máquina."</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Clique "Run" para iniciar a máquina de turing e rodar até que ela pare.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Clique em "Pause" para interromper a máquina enquanto está rodando.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Clique em "Step" para rodar um único passo da máquina.</li>
+					</div>
+				</ul>
+
+				<h5>Sintaxe</h5>
+
+				<ul>
+					<div>
+						<li>Cada linha deve conter uma tupla na forma: '(estado atual) (símbolo atual) (novo símbolo) (direção) (novo estado)'</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Você pode usar qualquer número ou palavra para (estado atual) e (novo estado)</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Você pode usar qualquer caractere para o (estado atual) e (novo estado)</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>(direção) deve ser l, r ou *. Denotando, respectivamente, esquerda, direita ou não mova.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Qualquer coisa depois de ';' é visto como comentário e ignorado.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>A máquina para quando chega em qualquer estado de aceitação ou rejeição.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>'*' pode ser usado como coringa em (símbolo atual) ou (estado atual)</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>'*' pode ser usado em (novo símbolo) ou (novo estado) significando 'sem mudanças'.</li>
+					</div>
+
+					<div class="howToUseTopics">
+						<li>Você pode especificar a posição inicial do cabeçote usando '*' no input inicial.</li>
+					</div>
+				</ul>
+
+				<div class="upDiv"><a href="" name="#back"><img src="images/up.jpg" class="up"></a></div>
+			</div></a>
+		</div>
+
+		<script type="text/javascript" src="scripts/jsTuring.js"></script>
+	</body>
+</html>

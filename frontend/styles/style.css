@@ -1,0 +1,161 @@
+/*
+Turing Machine Simulator Style
+Author: Clara Moraes Dantas
+*/
+
+html, body {
+	font-family: Consolas, Arial, sans-serif;
+	font-size: 14px;
+	height: 100%;
+	width: 100%;
+	background-color: #222222;
+	margin: 0;
+}
+
+#navbar {
+	position: absolute;
+	background-color: #49b3d1;
+	height: 50px;
+	width: 100%;
+}
+
+.navbarIcon {
+	display: inline-block;
+	float: left;
+}
+
+.navbarText {
+	display: inline-block;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.navbarTextRight {
+	display: inline-block;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.navbarRight {
+	display: inline-block;
+	float: right;
+	margin-left: 10px;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+#navbarImg {
+	height: 100px;
+	width: 100px;
+	margin-top: -23px;
+	margin-left: -17px;
+}
+
+#header {
+	margin-top: 200px;
+	background-color: #FFFFFF;
+}
+
+div div a {
+	text-decoration: none;
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 24px;
+
+}
+
+#mainBox {
+	border: 3px solid #d1d1d1;
+	border-radius: 2px;
+	background-color: #e0e0e0;
+	padding: 3em 2.5em 3em 2.5em;
+  	margin: 6em 2em 9em 3.3em;
+  	text-align: center;
+  	display: inline-block;
+  	height: 96em;
+  	width: 80em;
+}
+
+#machineTape {
+	border: 1.5em solid #f7f7f7;
+	border-radius: 2px;
+	border-radius: 2px;
+	height: 2em;
+	width: 76.6em;
+	margin: 0 auto;
+	margin-top: 0;
+	margin-left: 0;
+	background-color: #f7f7f7;
+}
+
+#bodyTitlesFont {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 19px;
+}
+
+.bodyTitles {
+	border: 2px solid #49b3d1;
+	background-color: #49b3d1;
+	width: 8%;
+	margin: 0 auto;
+	margin-top: -2em;
+	margin-bottom: 0;
+}
+
+.bodyTitlesFontC {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 16px;
+}
+
+.bodyTitlesControl {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 8em;
+	margin: 0 auto;
+	margin-top: -31.5em;
+	margin-left: 66em;
+	margin-bottom: 0;
+}
+
+.underTapeDiv {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 17px;	
+}
+
+.currentState {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 8em;
+	height: 2.7em;
+	margin-left: 0;
+	margin-top: 0.6em;
+	display: inline-block;
+	float: left;
+}
+
+#steps {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 8em;
+	height: 2.7em;
+	margin-left: 1em;
+	margin-top: 0.6em;
+	display: inline-block;
+	float: left;
+}
+
+.tapeStatusMessage {
+	margin-top: 0.6em;
+	margin-left: -22em;
+	margin-bottom: -3.4em;
+	display: inline-block;
+}

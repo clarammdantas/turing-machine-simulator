@@ -1,0 +1,89 @@
+/*
+Source box styles
+Author: Clara Moraes Dantas;
+*/
+
+.sourceDiv {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	width: 52.5em;
+	height: 29.7em;
+	padding: 0;
+	margin-top: 0em;
+	margin-left: 0;
+}
+
+#source {
+	border: 2px solid #f7f7f7;
+	border-radius: 2px;
+	background-color: #f7f7f7;
+	display: inline;
+	float: right;
+	width: 40em;
+	height: 24em;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 17px;
+	line-height: 17px;
+}
+
+.bodyTitlesFontP {
+	color: #000000;
+	font-family: Corben, Georgia, Times, sans-serif;
+	font-size: 16px;
+}
+
+.bodyTitlesProgram {
+	border: 2px solid #49b3d1;
+	border-radius: 2px;
+	background-color: #49b3d1;
+	width: 15em;
+	margin: 0 auto;
+	margin-top: 4.5em;
+	margin-left: 20em;
+	margin-bottom: 0;
+}
+
+.rows {
+	border: 2px solid #bcbcbc;
+	position: absolute;
+	z-index: 0;
+	background-color: #bcbcbc;
+	font-family: monospace;
+	font-size: 14.8px;
+	overflow: hidden;
+	text-align: right;
+	width: 3%;
+	max-height: 27.5em;
+}
+
+.sendMachine {
+	margin-top: 29em;
+	margin-left: 46.7em;
+}
+
+.sendButton {
+	background-color: #49b3d1;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 13px 26px;
+    margin: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13.333px;
+    height: 2.5em;
+    display: inline-block;
+}
+
+.sendButtonText {
+	margin-top: -0.3em;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:disabled:hover {
+	cursor: auto;
+}
