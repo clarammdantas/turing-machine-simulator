@@ -41,6 +41,7 @@ public class View {
 
 			case "3":
 				opcao = "3";
+				System.out.println("iai kyllerzinho, é mais uma do kevinho");
 				break;
 
 			default:
