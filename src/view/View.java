@@ -133,6 +133,7 @@ public class View {
 		if (op.equals("1")) {
 			System.out.println("Aperte enter para executar próximo passo!");
 			System.out.println("Digite undo para voltar para o passo anterior.");
+			System.out.println("Digite run para executar run.");
 			String continua;
 			continua = in.nextLine();
 
@@ -148,7 +149,11 @@ public class View {
 				else if(continua.isEmpty()) {
 					flagUndo = true;
 					controller.machineNextStep();
-				} else {
+				} else if (continua.equals("run")) {
+					controller.machineRun();
+					break;
+				}
+				else {
 					System.out.println("Comando invalido. Pressione enter para próximo passo ou digite undo, caso queira voltar passo anterior");
 				}
 
