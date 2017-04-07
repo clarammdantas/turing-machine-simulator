@@ -25,7 +25,7 @@ public class FileReaderTXT {
 	}
 
 	/**
-	 * This method read an txt file and create states from Turing Machine
+	 * This method reads a txt file and create states from Turing Machine
 	 * @throws Exception 
 	 */
 	public void readState() throws Exception {
@@ -49,7 +49,7 @@ public class FileReaderTXT {
 	}
 	
 	/**
-	 * this method create a state from string and put into hashmap
+	 * this method creates a state from string and put into hashmap
 	 * @param line, machine
 	 */
 	private void createState(String line, HashMap<String, TuringState> machine) {
@@ -67,7 +67,7 @@ public class FileReaderTXT {
 	}
 
 	/**
-	 *  This method read txt file, identify state and create your respective adjacency
+	 *  This method reads txt file, identify state and create your respective adjacency
 	 * @throws IOException
 	 */
 	public void readAdjacency() throws IOException {
@@ -87,7 +87,7 @@ public class FileReaderTXT {
 	}
 
 	/**
-	 * this method create a adjacency from String received, into your respective state
+	 * this method creates a adjacency from String received, into your respective state
 	 * @param line
 	 * @param machine
 	 */
@@ -99,7 +99,7 @@ public class FileReaderTXT {
 	}
 
 	/**
-	 * return a machine from file readed and starting from position 1. 
+	 * return a machine from file read and starting from position 1. 
 	 * OBS: this file doesn't have tape(initialInput), you should set.
 	 * @return
 	 * @throws Exception 
@@ -124,7 +124,7 @@ public class FileReaderTXT {
 	}
 
 	/**
-	 *  this method verify if machine map variable was initialized. 
+	 *  this method verifies if machine map variable was initialized. 
 	 * @return true if it was initialized or false if is null
 	 */
 	public boolean verifyMap() {

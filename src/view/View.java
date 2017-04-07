@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 import Controller.Controller;
 
+/**
+ * Classe que interage como usuário.
+ * @author Clara e Igor
+ *
+ */
 public class View {
 	private static final String line = System.getProperty("line.separator").toString();
 	public static Scanner in = new Scanner(System.in);
@@ -166,8 +171,8 @@ public class View {
 			System.out.println("Você digitou opção inexistente, voltará para o início");
 		}
 
-		if(controller.isAcceptanceState()) System.out.println("turing decidível :D"+ line);
-		else if(controller.isGarbageState()) System.out.println("turing decidível :("+line);
+		if(controller.isAcceptanceState()) System.out.println("estado de aceitação :D"+ line);
+		else if(controller.isGarbageState()) System.out.println("estado de rejeição :("+line);
 
 	}
 }
