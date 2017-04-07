@@ -131,6 +131,7 @@ public class Controller {
 	 * Salva o estado anterior da fita.
 	 * @throws CloneNotSupportedException
 	 */
+	@SuppressWarnings("unchecked")
 	public void saveState() throws CloneNotSupportedException {
 		oldHead.add(machine.getHeadPosition());
 		oldStates.add(machine.getCurrentState().clone());
