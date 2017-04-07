@@ -64,14 +64,18 @@ public class Controller {
 	 * @throws CloneNotSupportedException 
 	 */
 	public void undo() throws CloneNotSupportedException{
-		machine.setHeadPosition(oldHead.get(oldHead.size() - 1));
-		oldHead.remove(oldHead.size() - 1);
+		if(oldHead.size() > 0) {
+			machine.setHeadPosition(oldHead.get(oldHead.size() - 1));
+			oldHead.remove(oldHead.size() - 1);
 
-		machine.setState(oldStates.get(oldStates.size() - 1));
-		oldStates.remove(oldStates.size() - 1);
+			machine.setState(oldStates.get(oldStates.size() - 1));
+			oldStates.remove(oldStates.size() - 1);
 
-		machine.setInitialInput(oldTapeStates.get(oldTapeStates.size() - 1));
-		oldTapeStates.remove(oldTapeStates.size() - 1);
+			machine.setInitialInput(oldTapeStates.get(oldTapeStates.size() - 1));
+			oldTapeStates.remove(oldTapeStates.size() - 1);
+		} else { 
+			System.out.println("Nhaaaa! pegadinha, não pode dar undo!");
+		}
 		
 		printMachine();
 	}
